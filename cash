@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+{
+    float n;
+    int cents, q, d, ni, p;
+    
+    do
+    {
+        n = get_float("Change owed: ");
+        cents = round(n * 100);
+    }
+    while (cents < 1);
+    
+   
+    
+    q = cents / 25;
+    d = (cents - q * 25) / 10;
+    ni = (cents - q * 25 - d * 10) / 5;
+    p = (cents - q * 25 - d * 10 - ni * 5) / 1;
+    
+    printf("%i\n%i\n", cents, q + d + ni + p);
+    
+}
+
