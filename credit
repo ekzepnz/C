@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+{
+    long n;
+    int a = 0;
+    int a2 = 0;
+    int a3 = 0;
+    int a4 = 0;
+    int a5 = 0;
+    int a6 = 0;
+    int a7 = 0;
+    int a8 = 0;
+    int a9 = 0;
+    int a10 = 0;
+    int a11 = 0;
+    int a12 = 0;
+    int a13 = 0;
+    int a14 = 0;
+    int a15 = 0;
+    int a16 = 0;
+    int aa, aaa, aa3, aaa3, aa5, aaa5, aa7, aaa7, aa9, aaa9, aa11, aaa11, aa13, aaa13, aa15, aaa15, sum, sum1;
+    
+    
+    do 
+    {
+    n = get_long("Input 16-digit card number: ");
+    }
+    while (n < 1 || n > 9999999999999999);
+    
+    while (n >= 1000000000000000)
+    {
+        n -= 1000000000000000;
+        a++;
+    }
+    
+    while (n >= 100000000000000)
+    {
+        n -= 100000000000000;
+        a2++;
+    }
+    
+    while (n >= 10000000000000)
+    {
+        n -= 10000000000000;
+        a3++;
+    }
+    
+    while (n >= 1000000000000)
+    {
+        n -= 1000000000000;
+        a4++;
+    }
+    
+    while (n >= 100000000000)
+    {
+        n -= 100000000000;
+        a5++;
+    }
+    
+    while (n >= 10000000000)
+    {
+        n -= 10000000000;
+        a6++;
+    }
+    
+    while (n >= 1000000000)
+    {
+        n -= 1000000000;
+        a7++;
+    }
+    
+    while (n >= 100000000)
+    {
+        n -= 100000000;
+        a8++;
+    }
+    
+    while (n >= 10000000)
+    {
+        n -= 10000000;
+        a9++;
+    }
+    
+    while (n >= 1000000)
+    {
+        n -= 1000000;
+        a10++;
+    }
+    
+    while (n >= 100000)
+    {
+        n -= 100000;
+        a11++;
+    }
+    
+    while (n >= 10000)
+    {
+        n -= 10000;
+        a12++;
+    }
+    
+    while (n >= 1000)
+    {
+        n -= 1000;
+        a13++;
+    }
+    
+    while (n >= 100)
+    {
+        n -= 100;
+        a14++;
+    }
+    
+    while (n >= 10)
+    {
+        n -= 10;
+        a15++;
+    }
+    
+    
+    while (n >= 1)
+    {
+        n -= 1;
+        a16++;
+    }
+
+    aa15 = a15 * 2 / 10;
+    aaa15 = a15 * 2 % 10;
+    int a155 = aa15 + aaa15;
+    
+    aa13 = a13 * 2 / 10;
+    aaa13 = a13 * 2 % 10;
+    int a133 = aa13 + aaa13;
+    
+    aa11 = a11 * 2 / 10;
+    aaa11 = a11 * 2 % 10;
+    int a111 = aa11 + aaa11;
+   
+    aa9 = a9 * 2 / 10;
+    aaa9 = a9 * 2 % 10;
+    int a99 = aa9 + aaa9;
+     
+    aa7 = a7 * 2 / 10;
+    aaa7 = a7 * 2 % 10;
+    int a77 = aa7 + aaa7;
+
+    aa5 = a5 * 2 / 10; // 1
+    aaa5 = a5 * 2 % 10; // 2
+    int a55 = aa5 + aaa5;
+    
+    aa3 = a3 * 2 / 10;
+    aaa3 = a3 * 2 % 10;
+    int a33 = aa3 + aaa3;
+    
+    aa = a * 2 / 10;
+    aaa = a * 2 % 10;
+    int a1 = aa + aaa;
+    
+    sum1 = a155 + a133 + a111 + a99 + a77 + a55 + a33 + a1;
+    sum = sum1 + a16 + a14 + a12 + a10 + a8 + a6 + a4 + a2;
+    
+    if (sum % 10 == 0)
+    {
+        if (a == 5 && a2 <= 5 && a2 > 0)
+            {
+                printf("MASTERCARD\n");
+            }
+            
+        else if (a == 0 && a2 == 3 && a3 == 4)
+            {
+                printf("AMEX\n");
+            }
+            
+        else if (a == 0 && a2 == 3 && a3 == 7)
+            {
+                printf("AMEX\n");
+            }
+
+        else if (a == 4)
+            {
+                printf("VISA\n");
+            }
+            
+        else if (a + a2 + a3 == 0 && a4 == 4)
+            {
+                printf("VISA\n");
+            }
+        else
+            {
+            printf("INVALID\n");
+            }
+    }
+    else
+        {
+            printf("INVALID\n");
+        }
+    
+    
+    
+        
+}
+
+
+
+
+
+
