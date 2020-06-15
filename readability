@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+#include <math.h>
+
+int chars(string  s);
+int words(string s);
+int sent(string s);
+int index(int words, int sent, int chars);
+
+int main(void){
+    string s = get_string("Text: ");
+    int result=index(words(s), sent(s), chars(s));
+    if (result<1){
+    printf ("Before Grade 1\n");
+    }
+    else if (result>16){
+    printf ("Grade 16+\n");
+    }
+    else
+    printf ("Grade %i\n", result);
+
+}
+
+int chars(string s){
+    int count = 0;
+    for (int i = 0, n=strlen(s); i<=n; i++){
+        if ((s[i]>='A' && s[i]<='Z') || (s[i]>='a' && s[i]<='z')){
+        count+=1;
+        }
+    }
+    return count;
+    }
+
+int words(string s){
+    int count=1;
+    for (int i=0, n=strlen(s); i<n ; i++){
+        if (s[i]==' '){
+        count+=1;
+        }
+    }
+       return count;
+    }
+
+int sent(string s){
+    int count=0;
+    for (int i=0, n=strlen(s); i<n ; i++){
+        if (s[i]=='.' || s[i]=='!' || s[i]=='?'){
+        count+=1;
+        }
+    }
+        return count;
+    }
+
+int index(int words, int sent, int chars){
+    float swords=(float)chars/(float)words*100;
+    float ssent=(float)sent/(float)words*100;
+    int index = round(0.0588 * swords - 0.296 * ssent - 15.8);
+    return index;
+}
